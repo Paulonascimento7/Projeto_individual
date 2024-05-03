@@ -1,0 +1,140 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: black;
+    color: black;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+.nav{
+    max-width: 1120; /* manter uma largura maxima de: "a navbar não fica maior que esse tamanho"*/
+    margin: auto;
+    padding: 24px 160px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    
+
+    background: black;
+    color: #ffffff;
+    font-family: "Trebuchet MS", Sans-serif;
+    font-size: 22px;
+    font-weight: 400;
+}
+
+.logo{
+    font-family: "Trebuchet MS", Sans-serif;
+    font-size: 32px;
+    font-weight: 600;
+    text-transform: uppercase; /* Transformar a font em maiuscula */
+}
+
+.menu{
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+}
+
+.main {
+    display: flex;
+}
+
+.hero {
+    background: transparent;
+}
+
+.div_hero {
+    display: flex;
+}
+
+.titulo {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    font-size: 30px;
+    color: #ffffff;
+}
+
+.video {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    z-index: -1;
+
+}
+
+.div_mensagem {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    background: #ffffff;
+    color: black;
+    padding-top: 0dvh;
+    width: 100vw;
+    height: 300px;
+    font-size: 30px;
+}
+
+.sobre_mim {
+    display: flex;
+}
+
+.div_sobre_mim {
+    display: flex;
+}
+
+.text_sobre_mim {
+    display: flex;
+    position: absolute;
+    justify-content: start;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    font-size: 30px;
+    color: #ffffff;
+}
+
+.img_sobre_mim {
+    display: flex;
+    width: 100vw;
+    height: 150vh;
+
+}
+
+.cards {
+
+}
+
+.footer {
+    display: flex;
+    width: 100vw;
+    height: 300px;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+}
+
+p {
+    font-size: 40px;
+}
+
+
+
+
+
