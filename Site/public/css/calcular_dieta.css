@@ -1,0 +1,255 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: #b5b6be;
+    color: black;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+.nav{
+    max-width: 1120; /* manter uma largura maxima de: "a navbar não fica maior que esse tamanho"*/
+    margin: auto;
+    padding: 7px 160px;
+    width: 100vw;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center; 
+    position: fixed;
+
+    background: rgb(0, 0, 0);
+    color: #ffffff;
+    font-family: "Trebuchet MS", Sans-serif;
+    font-size: 22px;
+    font-weight: 400;
+    
+}
+
+.logo{
+    display: flex;
+    width: 32px;
+    height: 50px;
+
+
+    /* font-family: "Trebuchet MS", Sans-serif; (Deixar com font ao invés de logo)
+    font-size: 32px;
+    font-weight: 600;
+    text-transform: uppercase;  *//* Transformar a font em maiuscula */
+}
+
+
+.menu{
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+    
+}
+
+
+#div_1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    /* background: linear-gradient(10deg, rgba(0, 7, 20, 0.904) 15%, rgba(48, 63, 93, 0.5) 50%, rgba(122, 122, 122, 0.904) 85%); */
+    /* background: linear-gradient(10deg, rgba(0, 7, 20, 0.904) 15%, rgba(48, 63, 93, 0.5) 50%, rgba(0, 30, 90, 0.904) 85%); */
+} 
+
+#div_2{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+    /* background-color: rgb(84, 84, 84); */
+    background: linear-gradient(10deg, rgba(0, 7, 20, 0.904) 15%, rgba(48, 63, 93, 0.5) 50%, rgba(122, 122, 122, 0.904) 85%);
+    width: 75vw;
+    height: 70vh;
+    border-radius: 1rem;
+}
+
+.section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: none;
+	width: 35%;
+    height: 100%;
+	margin-left: 100px;
+    color: #ffffff;
+}
+
+.select_genero {
+    display: flex;
+	background-color: #999;
+	border: none;
+	border-radius: 4px;
+    padding: 4px;
+	width: 125%;
+	color: #ffffff
+}
+
+
+.select_biotipo {
+	background-color: #999;
+	border: none;
+	border-radius: 4px;
+	padding: 4px;
+	width: 125%;
+	color: #ffffff
+}
+
+.input_peso {
+	background-color: #999;
+	border: none;
+	border-radius: 4px;
+    padding: 4px;
+	width: 125%;
+	color: #ffffff
+}
+
+
+.input_altura {
+	background-color: #999;
+	border: none;
+	border-radius: 4px;
+    padding: 4px;
+	width: 125%;
+	color: #ffffff
+}
+
+
+.input_idade {
+	background-color: #999;
+	border: none;
+	border-radius: 4px;
+    padding: 4px;
+	width: 125%;
+	color: #ffffff
+}
+
+
+.select_nivel_atividade {
+	background-color: #999;
+	border: none;
+	border-radius: 4px;
+    padding: 4px;
+	width: 125%;
+	color: #ffffff
+}
+
+
+.select_objetivo {
+	background-color: #999;
+	border: none;
+	border-radius: 4px;
+    padding: 4px;
+	width: 125%;
+	color: #ffffff
+}
+
+.botao {
+	background-color: #999;
+	border: none;
+	border-radius: 4px;
+    padding: 4px;
+	width: 125%;
+	color: #ffffff
+}
+
+
+.forma_fisico {
+	background-color: #999;
+	border: none;
+	border-radius: 4px;
+    padding: 4px;
+	width: 125%;
+	color: #ffffff
+}
+
+.img_calcularDieta {
+
+    display: flex;
+    width: 50%;
+    height: 100%;
+    border-top-right-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+}
+
+
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+
+header h1 {
+    text-align: center;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+main {
+    background: #fff;
+    padding: 20px;
+    margin-top: 20px;
+    margin-left: 39px;
+    margin-right: 20px;
+    border-radius: 1rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 80px;
+}
+
+section {
+    margin-bottom: 20px;
+}
+
+section h2 {
+    color: black;
+    text-transform: uppercase;
+}
+
+.ul {
+    list-style: none;
+    padding: 0;
+}
+
+.ul li {
+    background: #f4f4f4;
+    margin: 5px 0;
+    padding: 10px;
+    border-left: rgba(48, 63, 93, 0.852) 5px solid;
+}
+
+p {
+    margin: 10px 0;
+}
+
+@media (max-width: 600px) {
+    .container {
+        width: 100%;
+    }
+
+    header {
+        padding: 20px;
+    }
+}

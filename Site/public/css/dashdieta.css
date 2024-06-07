@@ -1,0 +1,380 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Trebuchet MS", Sans-serif;
+    box-sizing: border-box;
+    
+}
+
+.container {
+    display: flex;
+    overflow: hidden;
+    flex-direction: row;
+    width: 100vw;
+}
+
+.dash {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    align-items: center;
+    justify-content: center;
+}
+
+.container_botao_caloriasDiarias {
+    display: flex;
+    flex-direction: column;
+}
+
+.perfil {
+    display: flex;
+    justify-content: space-around;
+}
+
+.nome_dashboard  {
+    display: flex;
+    position: relative;
+    font-size: 250%;
+    top: 35px;
+    left: 50px;
+}
+
+.titulo {
+    display: flex;
+    position: fixed;
+    font-size: 120%;
+    top: 15px;
+    font-size: 100%;
+    font-family: "Trebuchet MS", Sans-serif;
+}
+
+.bt {
+    display: inline-block;
+    position: relative;
+    width: 18px;
+    height: 18px;
+    margin: 0 2px;
+    top: 10px;
+    left: 280px;
+    border-radius: 50%;
+    cursor: pointer;
+    background: transparent;
+    background-color: #bcbcc1;
+    border-color:  transparent;
+}
+
+.bt:hover{
+    background-color: #ff4b4b;
+    transform: scale(1.1, 1.1);
+}
+
+.alinhar {
+
+    margin-top: 2%;
+    display: flex;
+    flex-direction: row;
+    width: 70vw;
+    gap: 30px;
+}
+
+.navigation {
+    position: relative;
+    height: 100vh;
+    background: #12283f;
+    width: 70px;
+    box-shadow: 10px 0 0 #021932;
+    border-left: 10px solid #12283f;
+    overflow: hidden;
+    transition: 0.5s;
+}
+
+
+.navigation ul li.active {
+    background: #021932;
+}
+
+.navigation ul li.active a::before {
+    content: '';
+    position: absolute;
+    top: -30px;
+    right: 0;
+    width: 30px;
+    height: 30px;
+    background: #12283f;
+    border-radius: 50%;
+    box-shadow: 15px 15px 0 #021b36;
+}
+
+.navigation ul li.active a::after {
+    content: '';
+    position: absolute;
+    bottom: -30px;
+    right: 0;
+    width: 30px;
+    height: 30px;
+    background: #12283f;
+    border-radius: 50%;
+    box-shadow: 15px -15px 0 #021b36;
+}
+
+.navigation:hover {
+    width: 300px;
+}
+
+.navigation ul {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding-left: 5px;
+    padding-top: 40px;
+}
+
+.navigation ul li {
+    position: relative;
+    list-style: none;
+    width: 100%;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+.navigation ul li a {
+    position: relative;
+    display: flex;
+    width: 100%;
+    text-decoration: none;
+    color: #fff;
+}
+
+.navigation ul li a .icon {
+    position: relative;
+    display: block;
+    min-width: 60px;
+    height: 60px;
+    text-align: center;
+    line-height: 70px;
+}
+
+.navigation ul li a .icon ion-icon {
+    position: relative;
+    font-size: 1.5rem;
+    z-index: 1;
+}
+
+.navigation ul li a .title {
+    position: relative;
+    display: block;
+    padding-left: 10px;
+    height: 60px;
+    line-height: 60px;
+    white-space: nowrap;
+}
+
+
+.card-kpi-basal {
+    border-radius: 15px;
+    width: 22vw;
+    height: 27vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #123963;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    color: #fff;
+    font-family: "Trebuchet MS", Sans-serif;
+    transition: transform 0.3s ease;
+}
+
+.card-kpi-basal:hover {
+    transform: scale(1.05);
+}
+
+.card-kpi-basal span {
+    font-size: 25px;
+}
+
+.card-kpi-tdee {
+    border-radius: 15px;
+    width: 22vw;
+    height: 27vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #12283f;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    font-family: "Trebuchet MS", Sans-serif;
+    color: #fff;
+    transition: transform 0.3s ease;
+}
+
+.card-kpi-tdee span {
+    font-size: 25px;
+}
+
+.card-kpi-tdee:hover {
+    transform: scale(1.05);
+}
+
+.card-kpi-caloriasDiarias {
+    border-radius: 15px;
+    width: 22vw;
+    height: 27vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #ff0000, #e24545);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    color: #fff;
+    font-family: "Trebuchet MS", Sans-serif;
+    transition: transform 0.3s ease;
+}
+
+.card-kpi-caloriasDiarias:hover {
+    transform: scale(1.05);
+}
+
+.card-kpi-caloriasDiarias span {
+    font-size: 25px;
+}
+
+
+.card-kpi-proteina {
+    border-radius: 15px;
+    margin-top: 5px;
+    width: 9vw;
+    height: 10vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: SteelBlue;
+    box-shadow: 0 6px 12px rgba(255, 85, 7, 0.224);
+    color: #fff;
+    font-family: "Trebuchet MS", Sans-serif;
+    transition: transform 0.3s ease;
+}
+
+.card-kpi-proteina span {
+    font-size: 25px;
+}
+
+.card-kpi-proteina:hover {
+    transform: scale(1.05);
+}
+
+
+.card-kpi-carboidrato {
+    border-radius: 15px;
+    margin-top: 20px;
+    width: 9vw;
+    height: 10vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: SteelBlue;
+    box-shadow: 0 6px 12px rgba(255, 85, 7, 0.224);
+    color: #fff;
+    font-family: "Trebuchet MS", Sans-serif;
+    transition: transform 0.3s ease;
+}
+
+.card-kpi-carboidrato span {
+    font-size: 25px;
+}
+
+.card-kpi-carboidrato:hover {
+    transform: scale(1.05);
+}
+
+
+
+.card-kpi-gordura {
+    border-radius: 15px;
+    margin-top: 20px;
+    width: 9vw;
+    height: 10vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: SteelBlue;
+    box-shadow: 0 6px 12px rgba(255, 85, 7, 0.224);
+    color: #fff;
+    font-family: "Trebuchet MS", Sans-serif;
+    transition: transform 0.3s ease;
+}
+
+.card-kpi-gordura span {
+    font-size: 25px;
+    
+}
+
+.card-kpi-gordura:hover {
+    transform: scale(1.05);
+}
+
+.select_mês {
+	background-color: Gainsboro;
+	border: none;
+	border-radius: 10px;
+	padding: 0.9rem 0.9rem;
+	width: 84%;
+	margin-top: 20px;
+}
+
+.select_dia {
+	background-color: Gainsboro;
+	border: none;
+	border-radius: 10px;
+	padding: 0.9rem 0.9rem;
+	width: 84%;
+	margin-top: 20px;
+}
+
+.input_pesoSelecionado {
+	background-color: Gainsboro;
+	border: none;
+	border-radius: 10px;
+	padding: 0.9rem 0.9rem;
+	width: 75%;
+	margin-top: 20px;
+}
+
+.input_pesoDesejado {
+	background-color: Gainsboro;
+	border: none;
+	border-radius: 10px;
+	padding: 0.9rem 0.9rem;
+	width: 75%;
+	margin-top: 20px;
+}
+
+.input_pesoAtualizado {
+	background-color: Gainsboro;
+	border: none;
+	border-radius: 10px;
+	padding: 0.9rem 0.9rem;
+	width: 75%;
+	margin-top: 20px;
+}
+
+.grafico {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30vw;
+    height: 40vh;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 1);
+    border-radius: 0px;
+    background-color: #ffffff;
+
+}
+
+body {
+    background-color: #f4f4f4;
+    color: #333;
+}

@@ -1,0 +1,217 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: black;
+    color: black;
+    overflow-x: hidden;
+
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+.nav {
+    max-width: 1120;
+    /* manter uma largura maxima de: "a navbar não fica maior que esse tamanho"*/
+    margin: auto;
+    padding: 24px 160px;
+    width: 100vw;
+
+
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    /*Com a posição absolute a navbar se sebrepoe a imagem */
+
+
+    background: transparent;
+    color: #ffffff;
+    font-family: "Trebuchet MS", Sans-serif;
+    font-size: 22px;
+    font-weight: 400;
+
+}
+
+.logo {
+    font-family: "Trebuchet MS", Sans-serif;
+    font-size: 32px;
+    font-weight: 600;
+    text-transform: uppercase;
+    /* Transformar a font em maiuscula */
+}
+
+.menu {
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+
+}
+
+.main {
+    display: flex;
+}
+
+.hero {
+    background: transparent;
+}
+
+.div_hero {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+}
+
+
+.video {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    z-index: -1;
+    /* transform: scale(1.64, 1.100); */
+    /*tamanho do video */
+    object-fit: cover;
+}
+
+.sobre_mim {
+    display: flex;
+    background: rgb(61, 61, 61);
+    background: linear-gradient(0deg, rgba(61, 61, 61, 1) 0%, rgba(0, 0, 0, 1) 100%);
+}
+
+
+.div_sobre_mim {
+    display: flex;
+    padding-top: 0dvh;
+    width: 100%;
+    height: 90vh;
+    /* background: linear-gradient(to top, #09203f 0%, #537895 100%); */
+}
+
+.text_sobre_mim {
+    font-family: "Trebuchet MS", Sans-serif;
+    color: #ffffff;
+    position: absolute;
+    font-size: 24px;
+    right: 0;
+    width: 50%;
+    padding: 40px 32px 0 100px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.text_sobre_mim h2 {
+    font-size: 40px;
+    text-transform: uppercase;
+    font-weight: 800;
+    margin-bottom: 32px;
+}
+
+.text_sobre_mim p {
+    font-size: 24px;
+    margin-bottom: 24px;
+}
+
+.div_sobre_mim-content {
+    display: flex;
+    position: relative;
+
+}
+
+.img_sobre_mim {
+    display: flex;
+    width: 65%;
+    height: 50%;
+}
+
+.cards {
+    display: flex;
+    background: black;
+    position: relative;
+}
+
+.div_cards {
+    display: flex;
+    width: 100vw;
+    height: 120vh;
+    justify-content: space-evenly;
+    align-items: center;
+    position: relative;
+
+}
+
+
+.card_a {
+    display: flex;
+    width: 450px;
+    height: 600px;
+    border-radius: 1rem;
+    overflow: hidden;
+    position: relative;
+    transition: transform .2s;
+}
+.card_a:hover {
+    transform: translateY(-16px);
+}
+
+.img_cardA {
+    display: flex;
+    width: 100%;
+}
+
+.mensagem_cardA {
+    color: #fff;
+    width: 100%;
+    padding: 0 40px;
+    display: flex;
+    top: 50%;
+    position: absolute;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: "Trebuchet MS", Sans-serif;
+    overflow: hidden;
+    
+}
+.mensagem_cardA h2 {
+    text-transform: uppercase;
+    font-size: 40px;
+    text-shadow: 4px 4px 0 black;
+    margin-bottom: 16px;
+}
+.mensagem_cardA p {
+    text-align: center;
+    font-size: 24px;
+    text-shadow: 2px 2px 0 black;
+
+}
+
+
+.footer {
+    display: flex;
+    width: 100vw;
+    height: 300px;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    background: rgb(0, 0, 0);
+    background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(61, 61, 61, 1) 100%);
+}
+
+footer p {
+    font-size: 24px;
+}

@@ -1,0 +1,346 @@
+* {
+	font-family: "Trebuchet MS", Sans-serif;
+    margin: 0;
+    padding: 0;
+   	box-sizing: border-box;
+	text-decoration: none;
+	color: var(--texto);
+	
+}
+
+body {
+	height: 100vh;
+	margin-bottom: 70px;
+	overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+nav {
+	max-width: 1120; /* manter uma largura maxima de: "a navbar não fica maior que esse tamanho"*/
+    margin: auto;
+    padding: 8px 160px;
+    width: 100vw;
+	
+
+	display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    
+	background: black;
+    color: #ffffff;
+    font-family: "Trebuchet MS", Sans-serif;
+    font-size: 22px;
+    font-weight: 400;
+
+
+}
+
+.logo{
+    font-family: "Trebuchet MS", Sans-serif;
+    font-size: 32px;
+    font-weight: 600;
+    text-transform: uppercase; /* Transformar a font em maiuscula */
+}
+
+.menu{
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+    
+}
+
+
+
+:root{
+    --fundo: #eeeefa;
+    --azul: #003674;
+    --azulclaro: #002b5c;
+	--azulescuronav: #051938; 
+    /* --texto: #1B1B1D; */
+    --texto2: #FDFBFB;
+	--button-radius: 0.7rem;
+	--max-width: 91%;
+  	--max-height: 81%;
+	
+}
+
+.letras_pequenas span {
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+	text-transform: lowercase;
+	font-size: 11px;
+	color: #7f7e7e;
+}
+
+.container-formulario p {
+	font-size: 11px;
+	text-transform: lowercase;
+	font-weight: 400;
+}
+
+.titulo {
+	font-weight: 900;
+	margin: 0;
+	font-size: 50px;
+	margin-top: -60px;
+	color: var(--texto2);
+	display: inline-block;
+    transition: 0.2s;
+    text-shadow: 5px 5px 9px #00192df0;
+	white-space: pre-line;
+	line-height: 0.9;
+}
+
+.titulo1 {
+	font-weight: 900;
+	margin: 0;
+	font-size: 40px;
+	margin-top: 25px;
+	color: var(--texto);
+	display: inline-block;
+    transition: 0.2s;
+    text-shadow: 5px 5px 9px #f9f9f9f0;
+	white-space: pre-line;
+}
+
+.titulo2 {
+	font-weight: 900;
+	margin: 0;
+	font-size: 40px;
+	margin-top: 140px;
+	margin-bottom: 10px;
+	color: var(--texto);
+	display: inline-block;
+    transition: 0.2s;
+    text-shadow: 5px 5px 9px #f9f9f9f0;
+	white-space: pre-line;
+}
+
+.subtitulo {
+	color: var(--texto2);
+	display: inline-block;
+    transition: 0.2s;
+    text-shadow: 5px 5px 9px #00192df0;
+	margin: 0;
+	margin-top: 40px;
+	font-size: 18px;
+	white-space: pre-line;
+}
+
+.link {
+	color: var(--azul);
+	font-size: 0.9rem;
+	margin: 1.5rem 0;
+	margin-bottom: -10px;
+	text-decoration: underline;
+}
+
+.container {
+	background-color: var(--fundo);
+	border-radius: var(--button-radius);
+	box-shadow: 0 0.9rem 1.7rem rgba(0, 0, 0, 0.25),
+		0 0.7rem 0.7rem rgba(0, 0, 0, 0.22);
+	height: var(--max-height);
+	max-width: var(--max-width);
+	overflow: hidden;
+	position: relative;
+	margin-left: 5%;
+	margin-top: 2.5%;
+}
+
+.container-formulario {
+	position: absolute;
+	top: 0;
+	transition: all 0.6s ease-in-out;
+}
+
+.entrar {
+	left: 0;
+	width: 50%;
+	z-index: 2;
+}
+
+.container.painel-ativo .entrar {
+	transform: translateX(100%);
+}
+
+.cadastro {
+	left: 0;
+	opacity: 0;
+	width: 50%;
+	z-index: 1;
+}
+
+.container.painel-ativo .cadastro {
+	animation: show 0.6s;
+	opacity: 1;
+	transform: translateX(100%);
+	z-index: 5;
+}
+
+.sobreposicao button{
+    padding: 15px 40px;
+    font-size: 12px;
+    text-transform: uppercase;
+	margin-top: 50px;
+    font-weight: 600;
+	border-color: 50px #0077ff;
+	background-color: transparent;
+    border-radius: 20px;
+	color: var(--texto2);
+    cursor: pointer;
+    display: inline-block;
+    transition: all 0.2s ease-in;
+	text-decoration: none;
+}
+
+.sobreposicao button:hover{
+    box-shadow: 0px 0px 8px #ffffffd5;
+	border-color: #ffffff;
+}
+
+.container-formulario.entrar button{
+    padding: 15px 40px;
+    font-size: 12px;
+    text-transform: uppercase;
+	margin-top: 40px;
+    font-weight: 600;
+    background-color: var(--azulescuronav);
+    border: 0;
+    border-radius: 20px;
+	color: var(--texto2);
+    cursor: pointer;
+    display: inline-block;
+    transition: all 0.2s ease-in;
+	text-decoration: none;
+}
+
+.container-formulario.entrar button:hover{
+    box-shadow: 0px 0px 8px #000000d5;
+}
+
+.container-formulario.cadastro button{
+    padding: 15px 40px;
+    font-size: 12px;
+    text-transform: uppercase;
+	margin-top: 30px;
+	margin-bottom: 40px;
+    font-weight: 600;
+    background-color: var(--azulescuronav);
+    border: 0;
+    border-radius: 20px;
+	color: var(--texto2);
+    cursor: pointer;
+    display: inline-block;
+    transition: all 0.2s ease-in;
+	text-decoration: none;
+}
+
+.container-formulario.cadastro button:hover{
+    box-shadow: 0px 0px 8px #000000d5;
+}
+
+.container-sobreposicao {
+	height: 100%;
+	left: 50%;
+	overflow: hidden;
+	position: absolute;
+	top: 0;
+	transition: transform 0.6s ease-in-out;
+	width: 50%;
+	z-index: 100;
+}
+
+.container.painel-ativo .container-sobreposicao {
+	transform: translateX(-100%);
+}
+
+.sobreposicao {
+	/* background-color: var(--azulescuronav); */
+	background-image: url("../img/sobre_mim_oficial.jpg");
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 100%;
+	left: -100%;
+	position: relative;
+	transform: translateX(0);
+	transition: transform 0.6s ease-in-out;
+	width: 200%;
+}
+
+.sobreposicao::after {
+	z-index: -1;
+    content: '';
+    width: inherit;
+    height: inherit;
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(10deg, rgba(0, 7, 20, 0.904) 15%, rgba(48, 63, 93, 0.5) 50%, rgba(0, 30, 90, 0.904) 85%);
+}
+
+.container.painel-ativo .sobreposicao {
+	transform: translateX(50%);
+}
+
+.painel-sobreposicao {
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	justify-content: center;
+	position: absolute;
+	text-align: center;
+	top: 0;
+	transform: translateX(0);
+	transition: transform 0.6s ease-in-out;
+	width: 50%;
+}
+
+.sobreposicao-esquerda {
+	transform: translateX(-20%);
+}
+
+.container.painel-ativo .sobreposicao-esquerda {
+	transform: translateX(0);
+}
+
+.sobreposicao-direita {
+	right: 0;
+	transform: translateX(0);
+}
+
+.container.painel-ativo .sobreposicao-direita {
+	transform: translateX(20%);
+}
+
+.formulario {
+	background-color: var(--fundo);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	padding: 0 3rem;
+	height: 100%;
+	text-align: center;
+}
+
+.input {
+	background-color: #ffffffa1;
+	border: none;
+	border-radius: 10px;
+	padding: 0.9rem 0.9rem;
+	width: 90%;
+	margin-top: 30px;
+}
+

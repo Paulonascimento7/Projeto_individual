@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AquaTech | Login</title>
+
+    <script src="./js/sessao.js"></script>
+
+    <link rel="stylesheet" href="./css/estilo.css">
+    <link rel="icon" href="./assets/icon/favicon2.ico">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+</head>
+
+<body>
+
+    <!--Header-->
+
+    <div class="header">
+        <div class="container">
+            <h1 class="titulo">AquaTech</h1>
+            <ul class="navbar">
+                <li>
+                    <a href="index.html">Inicial</a>
+                </li>
+                <li>
+                    <a href="simulador.html">Simulador</a>
+                </li>
+                <li>|</li>
+                <li class="agora">
+                    <a href="#">Login</a>
+                </li>
+                <li>
+                    <a href="cadastro.html">Cadastro</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+    <div class="login">
+        <div class="alerta_erro">
+            <div class="card_erro" id="cardErro">
+                <span id="mensagem_erro"></span>
+            </div>
+        </div>
+        <div class="container">
+            <div class="card card-login">
+                <h2>Olá de volta!</h2>
+                <div class="formulario">
+                    <div class="campo">
+                        <span>E-mail:</span>
+                        <input id="email_input" type="text" placeholder="Login">
+                    </div>
+                    <div class="campo">
+                        <span>Senha:</span>
+                        <input id="senha_input" type="password" placeholder="******">
+                    </div>
+                    <button class="botao" onclick="entrar()">Entrar</button>
+                </div>
+
+                <div id="div_aguardar" class="loading-div">
+                    <img src="./assets/circle-loading.gif" id="loading-gif">
+                </div>
+
+                <div id="div_erros_login"></div>
+            </div>
+        </div>
+    </div>
+
+    <!--footer inicio-->
+    <div class="footer">
+        <div class="container">
+            <h4>Feito com amor por aluno &hearts; SPTech &copy; 2023</h4>
+            <span class="version">v1.0.0</span>
+        </div>
+    </div>
+    <!--footer fim-->
+
+</body>
+
+</html>
+
+<script>
+
+
+    // function entrar() {
+    //     aguardar();
+
+    //     var emailVar = email_input.value;
+    //     var senhaVar = senha_input.value;
+
+    //     if (emailVar == "" || senhaVar == "") {
+    //         cardErro.style.display = "block"
+    //         mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
+    //         finalizarAguardar();
+    //         return false;
+    //     }
+    //     else {
+    //         setInterval(sumirMensagem, 5000)
+    //     }
+
+    //     console.log("FORM LOGIN: ", emailVar);
+    //     console.log("FORM SENHA: ", senhaVar);
+
+    //     fetch("/usuarios/autenticar", {
+    //         method: "POST",
+    //         headers: {
+    //             "Content-Type": "application/json"
+    //         },
+    //         body: JSON.stringify({
+    //             emailServer: emailVar,
+    //             senhaServer: senhaVar
+    //         })
+    //     }).then(function (resposta) {
+    //         console.log("ESTOU NO THEN DO entrar()!")
+
+    //         if (resposta.ok) {
+    //             console.log(resposta);
+
+    //             resposta.json().then(json => {
+    //                 console.log(json);
+    //                 console.log(JSON.stringify(json));
+    //                 sessionStorage.EMAIL_USUARIO = json.email;
+    //                 sessionStorage.NOME_USUARIO = json.nome;
+    //                 sessionStorage.ID_USUARIO = json.id;
+    //                 sessionStorage.AQUARIOS = JSON.stringify(json.aquarios)
+
+    //                 setTimeout(function () {
+    //                     window.location = "./dashboard/cards.html";
+    //                 }, 1000); // apenas para exibir o loading
+
+    //             });
+
+    //         } else {
+
+    //             console.log("Houve um erro ao tentar realizar o login!");
+
+    //             resposta.text().then(texto => {
+    //                 console.error(texto);
+    //                 finalizarAguardar(texto);
+    //             });
+    //         }
+
+    //     }).catch(function (erro) {
+    //         console.log(erro);
+    //     })
+
+    //     return false;
+    // }
+
+    // function sumirMensagem() {
+    //     cardErro.style.display = "none"
+    // }
+
+    
+    b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
+
+    let idUsuario = sessionStorage.ID_USUARIO
+    console.log(idUsuario)
+    function iniciarDash() {
+        obterKpiAcertos()
+        obterMaiorPontuacao()
+        obterqtdPessoasCadastradas()
+        obterGraficosPontuacaoUsuario()
+        obterMediaAcertosGeral()
+    }
+
+    function obterKpiAcertos() {
+        fetch(`/medidas/acertosUsuarios/${idUsuario}`, { cache: 'no-store' }) //fetch= buscar
+            .then(function (response) {
+                if (response.ok) {
+                    response.json().then(function (resposta) {
+                        console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                        mostrarKpiAcertos(resposta);
+                    });
+                } else {
+                    console.error('Nenhum dado encontrado ou erro na API');
+                }
+            })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p gráfico: ${error.message}`);
+            });
+    }
+
+
+    function obterMaiorPontuacao() {
+        fetch(`/medidas/obterMaiorPontuacao/${idUsuario}`, { cache: 'no-store' })
+            .then(function (response) {
+                if (response.ok) {
+                    response.json().then(function (resposta) {
+                        console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                        mostrarKpiMaiorPontuacao(resposta);
+                    });
+                } else {
+                    console.error('Nenhum dado encontrado ou erro na API');
+                }
+            })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p gráfico: ${error.message}`);
+            });
+    }
+
+
+    function obterqtdPessoasCadastradas() {
+        fetch(`/medidas/qtdPessoasCadastradas`, { cache: 'no-store' })
+            .then(function (response) {
+                if (response.ok) {
+                    response.json().then(function (resposta) {
+                        console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                        mostrarKpiPessoasCadastradas(resposta);
+                    });
+                } else {
+                    console.error('Nenhum dado encontrado ou erro na API');
+                }
+            })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p gráfico: ${error.message}`);
+            });
+    }
+
+    function obterGraficosPontuacaoUsuario() {
+        fetch(`/medidas/todosAcertosUsuario/${idUsuario}`, { cache: 'no-store' })
+            .then(function (response) {
+                if (response.ok) {
+                    response.json().then(function (resposta) {
+                        console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+
+                        mostrarGraficosPontuacaoUsuario(resposta);
+                    });
+                } else {
+                    console.error('Nenhum dado encontrado ou erro na API');
+                }
+            })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            });
+    }
+
+    function obterMediaAcertosGeral() {
+        fetch(`/medidas/obterMediaAcertosGeral`, { cache: 'no-store' })
+            .then(function (response) {
+                if (response.ok) {
+                    response.json().then(function (resposta) {
+                        console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+
+                        mostrarGraficosMedias(resposta);
+                    });
+                } else {
+                    console.error('Nenhum dado encontrado ou erro na API');
+                }
+            })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            });
+    }
+
+
+    function mostrarKpiAcertos(resposta) {
+        var dados = {
+            acertos_usuarios: []
+        }
+
+        for (var i = 0; i < resposta.length; i++) {
+            var registro = resposta[i];
+            dados.acertos_usuarios.push(registro.acertos_usuarios)
+        }
+
+        div_acertos.innerHTML = `${dados.acertos_usuarios}`
+    }
+
+
+    function mostrarKpiMaiorPontuacao(resposta) {
+        var dados = {
+            maior_pontuacao: []
+        }
+
+        for (var i = 0; i < resposta.length; i++) {
+            var registro = resposta[i];
+            dados.maior_pontuacao.push(registro.maior_pontuacao)
+        }
+        div_maiorPontuacao.innerHTML = `${dados.maior_pontuacao}`
+    }
+
+    function mostrarKpiPessoasCadastradas(resposta) {
+        var dados = {
+            pessoas_cadastradas: []
+        }
+
+        for (var i = 0; i < resposta.length; i++) {
+            var registro = resposta[i];
+            dados.pessoas_cadastradas.push(registro.pessoas_cadastradas)
+        }
+        div_PessoasCadastradas.innerHTML = `${dados.pessoas_cadastradas}`
+    }
+
+
+
+    function mostrarGraficosPontuacaoUsuario(resposta) {
+        console.log('iniciando plotagem...');
+
+        var dados = {
+            pontuações_usuario: []
+        }
+
+        for (var i = 0; i < resposta.length; i++) {
+            var registro = resposta[i];
+            dados.pontuações_usuario.push(registro.pontuações_usuario)
+        }
+
+        const ctx2 = document.getElementById('myChart2');
+
+        new Chart(ctx2, {
+            type: 'line',
+            data: {
+                labels: ['1','2', '3', '4', '5'],
+                datasets: [{
+                    label: 'Pontuação',
+                    data: [dados.pontuações_usuario],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+    }
+
+
+
+    function mostrarGraficosMedias(resposta) {
+        console.log('iniciando plotagem...');
+
+        var dados = {
+            media_acertos_geral: [],
+            media_acertos_usuario: []
+        }
+
+        for (var i = 0; i < resposta.length; i++) {
+            var registro = resposta[i];
+            dados.media_acertos_geral.push(registro.media_acertos_geral)
+            dados.media_acertos_usuario.push(registro.media_acertos_usuario)
+        }
+
+        const ctx = document.getElementById('myChart');
+
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Média Geral', 'Sua Média'],
+                datasets: [{
+                    label: 'Médias',
+                    data: [dados.media_acertos_geral, dados.media_acertos_usuario],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+    }
+
+
+</script>
